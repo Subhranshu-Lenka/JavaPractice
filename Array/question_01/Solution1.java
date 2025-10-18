@@ -34,15 +34,17 @@ class Solution1{
 
         String inputRegex = "^\\s*(\\d{1,9})(\\s*,\\s*\\d{1,9})*\\s*$";
         /* valid inputs
-           
             "123, 456,789",
             "1,2,3",
             "  12 , 34 , 56  "
         */ 
 
+        System.out.println();
         System.out.println("Enter the integer array \n For eg. 1,2,6,3,56,45....");
+
         String inputArr = sc.nextLine();
 
+        System.out.println();
         if(inputArr.matches(inputRegex)){
             System.out.println("The input array is corect.");
         }
@@ -58,13 +60,24 @@ class Solution1{
                     .mapToInt(Integer::parseInt) // cast to int
                     .toArray();
 
+        System.out.println();
         System.out.println("Given int arr "+ Arrays.toString(arr));
         
-        
+        System.out.println();
         System.out.println("Enter the target \t (the specific sum you want to find)");
         int target = sc.nextInt();
 
-        // Any result = twoSum()
+        int[] result = twoSum(arr,target);
 
+        System.out.println();
+        String message;
+        if(result.length>0){
+            message = String.format("Target : %d is achieved by adding the elements present at index : %d and %d of the given array.",target,result[0],result[1]);
+        }
+        else{
+            message= String.format("Target : %d cannot be achieved by adding any elements present in the given array.",target);
+        }
+        System.out.println();
+        System.out.println(message);
     }
 }
