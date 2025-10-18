@@ -1,20 +1,19 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.HashMap;
 
-class Solution1{
-    // Solution in O(n^2)
-    public static int[] twoSum(int[] nums, int target){
-        int ans[]={};
-        
-        for(int i=0;i< nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i]+nums[j]==target){
-                    ans = new int[]{i,j};
-                }
-            }
+class Solution2{
+    // Solution in O(n)
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> mpp = new HashMap<>();
+        int sub = 0;
+        for(int i = 0; i < nums.length; ++i) {
+            sub = target - nums[i];
+            if(mpp.containsKey(sub))
+                return new int[]{mpp.get(sub), i};
+            mpp.put(nums[i], i);
         }
-
-        return ans;
+        return new int[]{};
     }
 
     public static void main (String args[]){
