@@ -19,7 +19,7 @@ class Solution2{
     public static void main (String args[]){
         Scanner sc = new Scanner(System.in);
 
-        String inputRegex = "^\\s*(\\d{1,9})(\\s*,\\s*\\d{1,9})*\\s*$";
+        String inputRegex = "^\\s*(-?\\d{1,9})(\\s*,\\s*-?\\d{1,9})*\\s*$";
         /* valid inputs
             "123, 456,789",
             "1,2,3",

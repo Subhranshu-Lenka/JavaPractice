@@ -42,7 +42,7 @@ class Solution {
             System.out.println("The input array is corect.");
         }
         else{
-            System.out.println("The input array is in-corect. Existing the program...");
+            System.out.println("The input array is in-corect. Exiting the program...");
             return;
         }
 

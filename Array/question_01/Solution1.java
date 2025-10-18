@@ -20,7 +20,7 @@ class Solution1{
     public static void main (String args[]){
         Scanner sc = new Scanner(System.in);
 
-        String inputRegex = "^\\s*(\\d{1,9})(\\s*,\\s*\\d{1,9})*\\s*$";
+        String inputRegex = "^\\s*(-?\\d{1,9})(\\s*,\\s*-?\\d{1,9})*\\s*$";
         /* valid inputs
             "123, 456,789",
             "1,2,3",
@@ -37,7 +37,7 @@ class Solution1{
             System.out.println("The input array is corect.");
         }
         else{
-            System.out.println("The input array is in-corect. Existing the program...");
+            System.out.println("The input array is in-corect. Exiting the program...");
             return;
         }
 
