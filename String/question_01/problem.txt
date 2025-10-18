@@ -1,0 +1,16 @@
+    let longestSub = strs[0]
+    
+    for(let i=1;i<strs.length;i++){
+        if(longestSub.length===0){
+            return longestSub;
+        }
+        for(let j=0;j<strs[i].length;j++){
+            if(longestSub[j]!=strs[i][j]){
+                longestSub = longestSub.substring(0,j);
+                break;
+            }
+        }
+
+        longestSub = longestSub.substring(0,Math.min(longestSub.length,strs[i].length));
+    }
+    return longestSub;
