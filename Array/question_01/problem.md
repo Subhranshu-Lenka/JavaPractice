@@ -8,8 +8,13 @@ The goal is to find **two numbers in the array** that add up exactly to the `tar
 - Your function should return the **indices** of the two numbers.
 - **You may not use the same element twice.**
 - If no two numbers sum up to the target, the function should return an empty array (`[]`).
+- You must also **write a `main` method** that performs the following steps:
 
-----
+    1. **Takes input** for the array and the target value from the user.  
+    2. **Validates the input array format**, ensuring it contains only numbers separated by commas (with optional spaces).  
+    3. **Calls the `twoSum()` function** with the validated array and target value.  
+    4. **Displays the result** appropriately.
+---
 ---
 
 ## Input / Output
