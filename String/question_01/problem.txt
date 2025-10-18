@@ -1,16 +1,38 @@
-    let longestSub = strs[0]
-    
-    for(let i=1;i<strs.length;i++){
-        if(longestSub.length===0){
-            return longestSub;
-        }
-        for(let j=0;j<strs[i].length;j++){
-            if(longestSub[j]!=strs[i][j]){
-                longestSub = longestSub.substring(0,j);
-                break;
-            }
-        }
+Problem 1: Longest Common Prefix
+Problem Statement
 
-        longestSub = longestSub.substring(0,Math.min(longestSub.length,strs[i].length));
-    }
-    return longestSub;
+Write a function, longestCommonPrefix(String[] strs), that finds the longest common prefix string among an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+You must also write a main function that:
+    Takes user input for an array of strings (comma- separated).
+        Example input: apple, application, appstore
+    Validates the input using a regular expression.
+    Splits and trims the strings into an array.
+    Calls the longestCommonPrefix() method and prints the result.
+
+Input / Output
+Parameter	Type	Description
+strs	Array of Strings	The list of strings to analyze for a common prefix.
+
+Returns	Type	Description
+longestCommonPrefix	String	The longest common prefix among all strings. Returns an empty string if none exists.
+
+Example 1: Common Prefix Found
+Input:
+
+strs = ["flower", "flow", "flight"]
+Output:
+
+"fl"
+Explanation: The longest common prefix among the three strings is "fl".
+
+Example 2: No Common Prefix Found
+Input:
+
+strs = ["dog", "racecar", "car"]
+Output:
+
+""
+Explanation: There is no common prefix among the input strings.
