@@ -1,11 +1,12 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-class Solution{
+class Solution1{
 
     public static int maximumSubArraySum(int[] arr){
         int res = arr[0];
 
+        // naive appraoch O(n^2)
         for(int i=0;i<arr.length ; i++){
             int currSum = 0;
 
