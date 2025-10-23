@@ -1,2 +1,2 @@
-There was an warning in the system.
-The warning caused a system crash.
+There was an error in the environment.
+The error caused a environment crash.
