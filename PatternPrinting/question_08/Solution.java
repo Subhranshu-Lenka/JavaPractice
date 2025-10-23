@@ -1,46 +1,10 @@
-# Problem : Pascal’s Triangle
-
-## Problem Statement
-
-Write a program that prints the **first n rows of Pascal’s Triangle**.
-
-- Each number in the triangle is the sum of the two numbers directly above it.
-- The triangle starts with `1` at the top.
-
-## Input
-
-- An integer `n` representing the number of rows.
-
-## Output
-
-- The first `n` rows of Pascal’s Triangle.
-
-## Example
-
-**Input:**
-
-`5`
-
-**Output:**
-
-```
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-```
-
-## Code
-
-```java
 import java.util.Scanner;
 
 class Solution{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows for the pattern.");
-
+        
         int n = sc.nextInt();
 
         System.out.println();
@@ -58,20 +22,3 @@ class Solution{
         }
     }
 }
-```
-
-## Terminal Output
-
-```
-$ java Solution
-Enter the number of rows for the pattern.
-5
-
-Pattern :
-
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-```

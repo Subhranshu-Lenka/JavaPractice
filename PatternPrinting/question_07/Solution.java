@@ -1,45 +1,10 @@
-# Problem : Hollow Pyramid
-
-## Problem Statement
-
-Write a program that prints a **hollow pyramid** made of stars (`*`) with **n rows**.
-
-- Only the **edges** and the **base** of the pyramid should have stars; the inside should be empty (spaces).
-
-## Input
-
-- An integer `n` representing the number of rows.
-
-## Output
-
-- A hollow pyramid of stars with `n` rows.
-
-## Example
-
-**Input:**
-
-`5`
-
-**Output:**
-
-```
-    *
-   * *
-  *   *
- *     *
-*********
-```
-
-## Code
-
-```java
 import java.util.Scanner;
 
 class Solution{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows for the pattern.");
-
+        
         int n = sc.nextInt();
 
         System.out.println();
@@ -56,20 +21,3 @@ class Solution{
         }
     }
 }
-```
-
-## Terminal Output
-
-```
-$ java Solution
-Enter the number of rows for the pattern.
-5
-
-Pattern :
-
-    *
-   * *
-  *   *
- *     *
-*********
-```

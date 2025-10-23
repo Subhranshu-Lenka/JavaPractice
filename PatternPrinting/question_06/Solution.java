@@ -1,51 +1,10 @@
-# Problem : Diamond Pattern
-
-## Problem Statement
-
-Write a program that prints a **diamond pattern** of stars (`*`).
-
-- The diamond has **n rows in the top half**.
-- The bottom half mirrors the top half, forming a symmetric diamond.
-
-## Input
-
-- An integer `n` representing the number of rows in the top half.
-
-## Output
-
-- A symmetric diamond of stars.
-
-## Example
-
-**Input:**
-
-`5`
-
-**Output:**
-
-```
-    *
-   ***
-  *****
- *******
-*********
- *******
-  *****
-   ***
-    *
-
-```
-
-## Code
-
-```java
 import java.util.Scanner;
 
 class Solution{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows for the pattern.");
-
+        
         int n = sc.nextInt();
 
         System.out.println();
@@ -66,24 +25,3 @@ class Solution{
         }
     }
 }
-```
-
-## Terminal Output
-
-```
-$ java Solution
-Enter the number of rows for the pattern.
-5
-
-Pattern :
-
-    *
-   ***
-  *****
- *******
-*********
- *******
-  *****
-   ***
-    *
-```
