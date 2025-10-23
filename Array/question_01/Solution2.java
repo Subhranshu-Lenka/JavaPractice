@@ -51,20 +51,17 @@ class Solution2{
         System.out.println("Given int arr "+ Arrays.toString(arr));
         
         System.out.println();
-        System.out.println("Enter the target \t (the specific sum you want to find)");
+        System.out.println("Enter the target (the specific sum you want to find)");
         int target = sc.nextInt();
 
         int[] result = twoSum(arr,target);
-
-        System.out.println();
         String message;
         if(result.length>0){
-            message = String.format("Target : %d is achieved by adding the elements present at index : %d and %d of the given array.",target,result[0],result[1]);
+            message = String.format("[%d,%d]",result[0],result[1]);
         }
         else{
-            message= String.format("Target : %d cannot be achieved by adding any elements present in the given array.",target);
+            message= "[]";
         }
-        System.out.println();
         System.out.println(message);
     }
 }

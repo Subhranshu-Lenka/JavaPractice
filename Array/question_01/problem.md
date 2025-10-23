@@ -1,4 +1,4 @@
-# Problem 1: Two Sum Problem
+# Problem : Two Sum Problem
 
 ## Problem Statement
 
@@ -10,26 +10,10 @@ The goal is to find **two numbers in the array** that add up exactly to the `tar
 - If no two numbers sum up to the target, the function should return an empty array (`[]`).
 - You must also **write a `main` method** that performs the following steps:
 
-    1. **Takes input** for the array and the target value from the user.  
-    2. **Validates the input array format**, ensuring it contains only numbers separated by commas (with optional spaces).  
-    3. **Calls the `twoSum()` function** with the validated array and target value.  
-    4. **Displays the result** appropriately.
----
----
-
-## Input / Output
-
-| Parameter | Type           | Description                          |
-|-----------|----------------|--------------------------------------|
-| nums      | Array of Int   | The list of numbers to search through |
-| target    | Integer        | The specific sum the two numbers must equal |
-
-**Return:**  
-
-- Array of integers — The indices `[i, j]` of the two numbers that sum to the target.  
-- Returns `[]` if no solution is found.
-
----
+  1. **Takes input** for the array and the target value from the user.
+  2. **Validates the input array format**, ensuring it contains only numbers separated by commas (with optional spaces).
+  3. **Calls the `twoSum()` function** with the validated array and target value.
+  4. **Displays the result** appropriately.
 
 ## Example 1: Solution Found
 
@@ -44,7 +28,7 @@ target = 9
 
 ```text
 [0,1]
-````
+```
 
 **Explanation:**
 Because nums[0] (which is 2) + nums[1] (which is 7) equals 9, we return the indices [0, 1].
@@ -62,53 +46,45 @@ target = 20
 
 ```text
 []
-````
+```
 
 **Explanation:**
 No two numbers in the array sum to 20, so we return an empty array.
 
-Constraints
+## Constraints
 
-$2 \le \text{nums.length} \le 10^5$
-
-$-10^9 \le \text{nums}[i] \le 10^9$
-
-$-10^9 \le \text{target} \le 10^9$
-
-You must find the solution with a time complexity between $O(n^2)$ and  $O(n)$.
-
+You must find the solution with a time complexity between $O(n^2)$ and $O(n)$.
 
 ## Code
 
 ```java
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.HashMap;
 
-class Solution1{
-    // Solution in O(n^2)
-    public static int[] twoSum(int[] nums, int target){
-        int ans[]={};
-        
-        for(int i=0;i< nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i]+nums[j]==target){
-                    ans = new int[]{i,j};
-                }
-            }
+class Solution2{
+    // Solution in O(n)
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> mpp = new HashMap<>();
+        int sub = 0;
+        for(int i = 0; i < nums.length; ++i) {
+            sub = target - nums[i];
+            if(mpp.containsKey(sub))
+                return new int[]{mpp.get(sub), i};
+            mpp.put(nums[i], i);
         }
-
-        return ans;
+        return new int[]{};
     }
 
     public static void main (String args[]){
         Scanner sc = new Scanner(System.in);
 
-        String inputRegex = "^\\s*(\\d{1,9})(\\s*,\\s*\\d{1,9})*\\s*$";
+        String inputRegex = "^\\s*(-?\\d{1,9})(\\s*,\\s*-?\\d{1,9})*\\s*$";
         /* valid inputs
             "123, 456,789",
             "1,2,3",
             "  12 , 34 , 56  "
-        */ 
+        */
 
         System.out.println();
         System.out.println("Enter the integer array \n For eg. 1,2,6,3,56,45....");
@@ -133,23 +109,38 @@ class Solution1{
 
         System.out.println();
         System.out.println("Given int arr "+ Arrays.toString(arr));
-        
+
         System.out.println();
-        System.out.println("Enter the target \t (the specific sum you want to find)");
+        System.out.println("Enter the target (the specific sum you want to find)");
         int target = sc.nextInt();
 
         int[] result = twoSum(arr,target);
-
-        System.out.println();
         String message;
         if(result.length>0){
-            message = String.format("Target : %d is achieved by adding the elements present at index : %d and %d of the given array.",target,result[0],result[1]);
+            message = String.format("[%d,%d]",result[0],result[1]);
         }
         else{
-            message= String.format("Target : %d cannot be achieved by adding any elements present in the given array.",target);
+            message= "[]";
         }
-        System.out.println();
         System.out.println(message);
     }
 }
+```
+
+## Terminal Output
+
+```
+$ java Solution2
+
+Enter the integer array
+ For eg. 1,2,6,3,56,45....
+2, 7, 11, 15
+
+The input array is corect.
+
+Given int arr [2, 7, 11, 15]
+
+Enter the target (the specific sum you want to find)
+9
+[0,1]
 ```
