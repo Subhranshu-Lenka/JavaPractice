@@ -20,7 +20,7 @@ Print three counts:
 
 ### Example
 
-**Input File Content (`sample.txt`):**
+**Input File Content (`input.txt`):**
 
 ```text
 Hello world
