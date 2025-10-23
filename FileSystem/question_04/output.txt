@@ -1,0 +1,2 @@
+There was an warning in the system.
+The warning caused a system crash.
