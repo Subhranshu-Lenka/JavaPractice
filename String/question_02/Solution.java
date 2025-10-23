@@ -17,7 +17,7 @@ class Solution{
         }
 
         for(var data : freqMap.entrySet()){
-            if(data.getValue()!=1){
+            if(data.getValue()!=0){
                 return false;
             }
         }
@@ -37,6 +37,7 @@ class Solution{
         // System.out.println("Input String "+str1+" "+str2);
 
         boolean result = checkAnagram(str1,str2);
+        System.out.println(result);
         System.out.printf("Given two strings '%s', '%s' %s%s", str1, str2, result ? "are" : "are not", " Anagram");
 
         return;

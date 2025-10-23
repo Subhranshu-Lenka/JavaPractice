@@ -15,7 +15,6 @@ class Solution {
                     break;
                 }
             }
-
             longest = longest.substring(0,Math.min(longest.length(),strs[i].length()));
         }
 
