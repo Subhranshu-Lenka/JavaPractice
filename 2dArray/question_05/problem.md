@@ -68,7 +68,6 @@ class Solution {
         Queue<int[]> q = new LinkedList<>();
         q.offer(new int[]{sr, sc});
 
-        // Change the color of the starting pixel
         image[sr][sc] = newColor;
 
         while (!q.isEmpty()) {
@@ -79,12 +78,10 @@ class Solution {
                 int nx = x + direction[0];
                 int ny = y + direction[1];
 
-                // Check boundary conditions and color match
                 if (nx >= 0 && nx < image.length && 
                     ny >= 0 && ny < image[0].length && 
                     image[nx][ny] == oldColor) {
 
-                    // Change the color and enqueue
                     image[nx][ny] = newColor;
                     q.offer(new int[]{nx, ny});
                 }
